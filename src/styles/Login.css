@@ -113,11 +113,146 @@
     margin-left: 700px;
     background: #062D37;
     border-radius: 50px;
-
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
     font-size: 32px;
     line-height: 38px;
     color: #FFFFFF;
+}
+
+.create {
+    position: absolute;
+    width: 360px;
+    height: 58px;
+    margin-top: 450px;
+    margin-left: 425px;
+    background: #062D37;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.line1 {
+    position: absolute;
+    width: 310px;
+    height: 0px;
+    margin-top: 560px;
+    margin-left: 260px;
+    border: 1px solid #000000;
+}
+
+.or {
+    position: absolute;
+    width: 27px;
+    margin-top: 550px;
+    margin-left: 590px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.line2 {
+    position: absolute;
+    width: 310px;
+    height: 0px;
+    margin-top: 560px;
+    margin-left: 640px;
+    border: 1px solid #000000;
+}
+
+.other {
+    position: absolute;
+    width: 280px;
+    margin-top: 600px;
+    margin-left: 260px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.fb {
+    position: absolute;
+    width: 600px;
+    height: 55px;
+    margin-top: 680px;
+    margin-left: 300px;
+    background: #0C99FF;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.fb_icon {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    margin-top: 688px;
+    margin-left: 360px;
+}
+
+.go {
+    position: absolute;
+    width: 600px;
+    height: 55px;
+    margin-top: 780px;
+    margin-left: 300px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.go_icon {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    margin-top: 788px;
+    margin-left: 368px;
+}
+
+.ap {
+    position: absolute;
+    width: 600px;
+    height: 55px;
+    margin-top: 880px;
+    margin-left: 300px;
+    background: #F1948A;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.ap_icon {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    margin-top: 888px;
+    margin-left: 358px;
+}
+
+.btn:hover {
+    background-color: #AEB6BF;
 }
