@@ -1,0 +1,33 @@
+.footer {
+    position: absolute;
+    width: 1690px;
+    height: 80px;
+    margin-top: 1200px;
+    background: #19A7CE;
+}
+
+.footer_link1 {
+    position: absolute;
+    width: 190px;
+    margin-top: 10px;
+    margin-left: 1150px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.footer_link2 {
+    position: absolute;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 1400px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 33px;
+    color: #FFFFFF;
+}

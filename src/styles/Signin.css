@@ -1,0 +1,90 @@
+.signin {
+    position: absolute;
+    margin-top: 175px;
+    margin-left: 235px;
+    width: 1200px;
+    height: 1000px;
+    background: #CBEFF9;
+}
+
+.signin_title {
+    position: absolute;
+    width: 200px;
+    margin-left: 520px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 47px;
+    color: #000000;
+}
+
+.input_title1 {
+    position: absolute;
+    width: 350px;
+    margin-top: 120px;
+    margin-left: 260px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.input1 {
+    position: absolute;
+    width: 650px;
+    height: 50px;
+    margin-top: 160px;
+    margin-left: 280px;
+    font-size: 24px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border-color: darkseagreen;
+}
+
+.input_title2 {
+    position: absolute;
+    width: 350px;
+    margin-top: 220px;
+    margin-left: 260px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.input2 {
+    position: absolute;
+    width: 650px;
+    height: 50px;
+    margin-top: 260px;
+    margin-left: 280px;
+    font-size: 24px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border-color: darkseagreen;
+}
+
+.submit {
+    position: absolute;
+    width: 196px;
+    height: 60px;
+    margin-top: 335px;
+    margin-left: 700px;
+    background: #062D37;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
+
+.submit:hover {
+    background-color: #AEB6BF;
+}
