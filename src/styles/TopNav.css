@@ -1,0 +1,64 @@
+.top_nav {
+    position: absolute;
+    width: 1340px;
+    height: 80px;
+    left: 100px;
+    top: 0px;
+    background-color: rgba(57, 57, 57, 1);
+}
+
+.pre {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 40px;
+    top: 33px;
+    color: white;
+}
+
+.next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 33px;
+    color: white;
+}
+
+.search {
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 175px;
+    top: 33px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.user {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 1100px;
+    top: 33px;
+    color: white;
+
+}
+
+.notice {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1180px;
+    top: 30px;
+    color: white;
+}
+
+.chat {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1260px;
+    top: 30px;
+    color: white;
+}

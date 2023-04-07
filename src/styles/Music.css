@@ -1,0 +1,160 @@
+.music {
+    position: absolute;
+    width: 1440px;
+    height: 100px;
+    left: 0px;
+    top: 924px;
+    background: #000000;
+}
+
+.cover {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 50px;
+    bottom: 25px;
+}
+
+.title {
+    position: absolute;
+    left: 110px;
+    top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.artist_name {
+    position: absolute;
+    left: 110px;
+    top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: white;
+}
+
+.like {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 210px;
+    top: 45px;
+    color: white;
+}
+
+.add {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 250px;
+    top: 45px;
+    color: white;
+}
+
+.list {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 290px;
+    top: 45px;
+    color: white;
+}
+
+.progress {
+    position: absolute;
+    width: 800px;
+    height: 3px;
+    left: 350px;
+    top: 75px;
+    background-color: white;
+}
+
+.random {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 650px;
+    top: 45px;
+    color: white;
+}
+
+.back {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 695px;
+    top: 45px;
+    color: white;
+}
+
+.play {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 740px;
+    top: 45px;
+    color: white;
+}
+
+.forward {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 785px;
+    top: 45px;
+    color: white;
+}
+
+.loop {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 830px;
+    top: 45px;
+    color: white;
+}
+
+.profile {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1190px;
+    top: 45px;
+    color: white;
+}
+
+.folder {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1230px;
+    top: 45px;
+    color: white;
+}
+
+.volume {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1270px;
+    top: 45px;
+    color: white;
+}
+
+.volume_control {
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    left: 1300px;
+    top: 53px;
+    color: white;
+}
+
+.zoom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 1395px;
+    top: 45px;
+    color: white;
+}
