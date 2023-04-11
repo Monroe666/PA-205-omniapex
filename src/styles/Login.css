@@ -1,0 +1,31 @@
+
+.layout {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 10rem auto 5rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    background: #000;
+}
+.header>div{
+    padding: 0 5rem;
+    margin: auto 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: right;
+    background: #000;
+    color: #ffffff;
+}
+.footer>div{
+    display: flex;
+    align-items: center;
+}
+.footer>div:last-child{
+    margin:1rem;
+}

@@ -1,25 +1,34 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navibar from "./fragments/Navibar";
-import Music from "./fragments/Music";
-import TopNav from "./fragments/TopNav";
-import Home from "./pages/Home";
-import Video from "./pages/Video";
+import {
+  Route,
+  Routes,
+} from "react-router-dom";
+import { routers } from "./router";
+import AuthRoute from "./router/AuthRoute";
 
-function App() {
-  return (
-    <div>
-      <Router>
-        <Navibar />
-        <Music />
-        <TopNav />
+const App = () => {
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/video" element={<Video />} />
-        </Routes>
-      </Router>
-    </div>
+  const RouteAuthFun = (
+    (routeList) => {
+      return routeList.map(
+        (item) => {
+          return (
+            <Route
+              path={item.path}
+              element={
+                <AuthRoute auth={item.auth} key={item.path}>
+                  {item.element}
+                </AuthRoute>
+              }
+              key={item.path}
+            >
+              {item?.children && RouteAuthFun(item.children)}
+            </Route>
+          );
+        }
+      );
+    }
   );
-}
+  return <Routes>{RouteAuthFun(routers)}</Routes>;
+};
 
 export default App;
