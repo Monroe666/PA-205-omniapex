@@ -1,6 +1,6 @@
 import "../styles/Home.css";
-import Like from "../assets/like.png"
-import Create from "../assets/create.png"
+import Like from "../assets/like.png";
+import Create from "../assets/create.png";
 
 const Home = () => {
     return (

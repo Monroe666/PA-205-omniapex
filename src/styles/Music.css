@@ -5,6 +5,7 @@
     left: 0px;
     top: 924px;
     background: #000000;
+    z-index: 1;
 }
 
 .cover {
