@@ -19,18 +19,21 @@ const Navibar = () => {
                 <BsThreeDots className="expand" onClick={() => setNavOpen(!isNavOpen)} />
                 <Link to="/">
                     <FiHome className="home_icon" />
-                    <p className={isNavOpen ? "description1" : "hide"}>Home</p>
+                    <p className={isNavOpen ? "name1" : "hide"}>Home</p>
                 </Link>
 
                 <Link to="/video">
                     <BsCameraVideo className="video_icon" />
-                    <p className={isNavOpen ? "description2" : "hide"}>Video</p>
+                    <p className={isNavOpen ? "name2" : "hide"}>Video</p>
                 </Link>
 
-                <TbWorldUpload className="post" />
-                <p className={isNavOpen ? "description3" : "hide"}>Story</p>
+                <Link to="/post">
+                    <TbWorldUpload className="post" />
+                    <p className={isNavOpen ? "name3" : "hide"}>Story</p>
+                </Link>
+
                 <TbShare3 className="share" />
-                <p className={isNavOpen ? "description4" : "hide"}>Social</p>
+                <p className={isNavOpen ? "name4" : "hide"}>Social</p>
             </nav>
         </div>
     )
