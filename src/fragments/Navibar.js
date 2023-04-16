@@ -32,8 +32,10 @@ const Navibar = () => {
                     <p className={isNavOpen ? "name3" : "hide"}>Story</p>
                 </Link>
 
-                <TbShare3 className="share" />
-                <p className={isNavOpen ? "name4" : "hide"}>Social</p>
+                <Link to="/social">
+                    <TbShare3 className="share" />
+                    <p className={isNavOpen ? "name4" : "hide"}>Social</p>
+                </Link>
             </nav>
         </div>
     )
