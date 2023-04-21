@@ -1,0 +1,90 @@
+.video_1 {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    top: 100px;
+    left: 50px;
+}
+
+.video_2 {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    top: 100px;
+    left: 300px;
+}
+
+.video_3 {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    top: 100px;
+    left: 550px;
+}
+
+.video_4 {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    top: 100px;
+    left: 800px;
+}
+
+.video_5 {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    top: 100px;
+    left: 1050px;
+}
+
+.video_d {
+    position: absolute;
+    left: 50px;
+    top: 450px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+.video_v {
+    position: absolute;
+    left: 50px;
+    top: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.img_title {
+    position: absolute;
+    width: 350px;
+    left: 50px;
+    top: 540px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.img_1 {
+    position: absolute;
+    left: 50px;
+    top: 620px;
+    width: 100px;
+    height: 200px;
+}
+
+.img_2 {
+    position: absolute;
+    left: 200px;
+    top: 620px;
+    width: 100px;
+    height: 200px;
+}
+
+.img_3 {
+    position: absolute;
+    left: 350px;
+    top: 620px;
+    width: 100px;
+    height: 200px;
+}

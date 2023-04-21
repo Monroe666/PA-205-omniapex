@@ -8,7 +8,7 @@
 }
 
 .nav_open {
-    position: absolute !important;
+    position: absolute;
     width: 230px;
     height: 924px;
     left: 0px;
@@ -47,7 +47,7 @@
     color: white;
 }
 
-.description1 {
+.name1 {
     position: absolute;
     left: 110px;
     top: 155px;
@@ -65,7 +65,7 @@
     color: white;
 }
 
-.description2 {
+.name2 {
     position: absolute;
     left: 110px;
     top: 220px;
@@ -83,7 +83,7 @@
     color: white;
 }
 
-.description3 {
+.name3 {
     position: absolute;
     left: 110px;
     top: 285px;
@@ -101,11 +101,19 @@
     color: white;
 }
 
-.description4 {
+.name4 {
     position: absolute;
     left: 110px;
     top: 350px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: white;
+}
+
+.expand:hover,
+.name1:hover,
+.name2:hover,
+.name3:hover,
+.name4:hover {
+    color: #1db954;
 }

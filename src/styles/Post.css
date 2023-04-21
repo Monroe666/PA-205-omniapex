@@ -1,0 +1,83 @@
+.post_title {
+    position: absolute;
+    width: 500px;
+    left: 50px;
+    top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.post_1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 50px;
+    top: 100px;
+}
+
+.post_2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 350px;
+    top: 100px;
+}
+
+.post_3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 650px;
+    top: 100px;
+}
+
+.poster {
+    position: absolute;
+    font-size: 20px;
+    left: 100px;
+    top: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.post_title1 {
+    position: absolute;
+    width: 500px;
+    left: 50px;
+    top: 410px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.post_4 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 50px;
+    top: 500px;
+}
+
+.post_5 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 350px;
+    top: 500px;
+}
+
+.post_6 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 650px;
+    top: 500px;
+}
+
+.poster1{
+    position: absolute;
+    font-size: 20px;
+    left: 100px;
+    top: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
