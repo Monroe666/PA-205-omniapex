@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { FaRegUser } from 'react-icons/fa';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { BiMessageRounded } from 'react-icons/bi';
+import {BiLogOut} from 'react-icons/bi'
 
 const TopNav = () => {
     return (
@@ -13,6 +14,10 @@ const TopNav = () => {
             <FaRegUser className="user" />
             <IoMdNotificationsOutline className="notice" />
             <BiMessageRounded className="chat" />
+            <BiLogOut className="logout"  onClick={()=>{
+                localStorage.removeItem("Token");
+                window.location.reload();
+            }}/>
         </div>
     )
 }

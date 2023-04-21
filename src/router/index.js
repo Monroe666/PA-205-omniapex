@@ -7,7 +7,7 @@ const Home = lazy(() => import("../pages/Home.js"));
 const Video = lazy(() => import("../pages/Video.js"));
 const Post = lazy(() => import("../pages/Post.js"));
 const Social = lazy(() => import("../pages/Social.js"));
-
+const VideoPlay = lazy(() => import("../pages/VideoPlay.js"));
 const LayoutComponent = ({ children }) => {
   return (
     <Suspense fallback={""}>
@@ -27,6 +27,8 @@ export const routers = [
       { path: "/video", element: <Video />, auth: true },
       { path: "/post", element: <Post />, auth: true },
       { path: "/social", element: <Social />, auth: true },
+      { path: "/videoPlay", element: <VideoPlay />, auth: true },
+      
       { path: "*", element: <NotFound />, auth: true },
     ],
   },

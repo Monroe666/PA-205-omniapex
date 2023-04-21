@@ -23,9 +23,13 @@ function Login() {
     let formData = new FormData(e.currentTarget);
     let account = formData.get("account");
     let password = formData.get("password");
-    let remember = formData.get("check");
+    let remember = formData.get("remember");
 
     console.log(account,password,remember);
+    if (account && password && password && remember) {
+      window.localStorage.setItem("Token", 111);
+      window.location.reload();
+    }
   }
   return (
     <div className="layout">
