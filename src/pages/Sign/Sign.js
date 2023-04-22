@@ -4,33 +4,54 @@ import "../../styles/Login.css";
 
 function Login() {
   const [show, setShow] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const handleNewAccount = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let account = formData.get("account");
-    let username = formData.get("username");
     let password = formData.get("password");
+    let username = formData.get("username");
+    let usertype = formData.get("usertype")
     let check = formData.get("check");
 
-    console.log(account, username, password);
-    if (account && username && password && check) {
+    const eformat = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+    if (account == "" || account == null) {
+      setErrorMessage('Account cannot be empty')
+    }
+
+    else if (!eformat.test(account)) {
+      setErrorMessage('Account format is incorrect')
+    }
+
+    else if (password == "" || password == null) {
+      setErrorMessage('Password cannot be empty')
+    }
+
+    else if (username == "" || username == null) {
+      setErrorMessage('Username cannot be empty')
+    }
+
+    else if (usertype == "" || usertype == null) {
+      setErrorMessage('Please select the type of user you are registering')
+    }
+
+    else if (!check) {
+      setErrorMessage('Please check the Agree to Terms and Conditions and Privacy Policy.')
+    }
+
+    else {
+      let obj = { "account": account, "password": password, "username": username, "usertype": usertype }
+      localStorage.setItem('user', JSON.stringify(obj));
+      alert('Congratulations, you have sign up successfully!');
+    }
+
+    if (account && username && password && usertype && check) {
       window.localStorage.setItem("Token", 111);
       window.location.reload();
     }
   };
-  const handleLogin = (e) => {
-    e.preventDefault();
-    let formData = new FormData(e.currentTarget);
-    let account = formData.get("account");
-    let password = formData.get("password");
-    let remember = formData.get("remember");
-
-    console.log(account,password,remember);
-    if (account && password && password && remember) {
-      window.localStorage.setItem("Token", 111);
-      window.location.reload();
-    }
-  }
   return (
     <div className="layout">
       <div className="header">
@@ -41,9 +62,9 @@ function Login() {
         <div>
           <span
             onClick={() => setShow((v) => !v)}
-            style={{ fontSize: "34px", fontWeight: "bold",cursor: "pointer" }}
+            style={{ fontSize: "34px", fontWeight: "bold", cursor: "pointer" }}
           >
-            {show?"Log In":"Create New Account"}
+            {show ? "Log In" : "Create New Account"}
           </span>
         </div>
       </div>
@@ -77,10 +98,11 @@ function Login() {
                     margin: "1rem 1rem",
                   }}
                 >
-                  <div>Email Address or Phone Number</div>
+                  <div>Email Address</div>
                   <input
                     type="text"
                     name="account"
+                    placeholder="john@example.com"
                     style={{
                       width: "20rem",
                       height: "2rem",
@@ -124,17 +146,31 @@ function Login() {
                   />
                 </div>
                 <div>
-                  <input type="checkbox" name="check" />
+                  <input type="radio" id="user" name="usertype" value="user" />
+                  <label for="user">User</label>
+
+                  <input type="radio" id="creator" name="usertype" value="creator" />
+                  <label for="creator">Creator</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="check"
+                  />
                   <span
                     style={{
                       textDecoration: "underline",
                       fontSize: "8px",
                     }}
                   >
-                    I agrree to Folowa’s Terms and Conditions of Us and Privacy
+                    I agrree to Folowa's Terms and Conditions of Us and Privacy
                     Policy.
                   </span>
                 </div>
+                {errorMessage !== null &&
+                  <div>
+                    <span style={{ fontSize: "15px", color: "red" }}>{errorMessage}</span>
+                  </div>}
                 <input
                   type="submit"
                   value="Create a New Account"
@@ -152,7 +188,7 @@ function Login() {
           ) : (
             <Fragment>
               <div style={{ fontSize: "30px", fontWeight: "bold" }}>LOG IN</div>
-              <form onSubmit={handleLogin}>
+              <form>
                 <div
                   style={{
                     margin: "1rem 1rem",
