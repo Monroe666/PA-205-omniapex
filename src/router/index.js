@@ -25,6 +25,7 @@ export const routers = [
     children: [
       { path: "/home", element: <Home />, auth: true },
       { path: "/video", element: <Video />, auth: true },
+      { path: "/videoPlay", element: <VideoPlay />, auth: true },
       { path: "/post", element: <Post />, auth: true },
       { path: "/social", element: <Social />, auth: true },
       { path: "/videoPlay", element: <VideoPlay />, auth: true },

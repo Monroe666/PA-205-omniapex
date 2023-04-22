@@ -19,7 +19,7 @@
 .title {
     position: absolute;
     left: 110px;
-    top: 15px;
+    top: 35px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: white;
@@ -28,7 +28,7 @@
 .artist_name {
     position: absolute;
     left: 110px;
-    top: 50px;
+    top: 65px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
     color: white;
