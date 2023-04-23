@@ -8,9 +8,9 @@ const Video = lazy(() => import("../pages/Video.js"));
 const Post = lazy(() => import("../pages/Post.js"));
 const Social = lazy(() => import("../pages/Social.js"));
 const VideoPlay = lazy(() => import("../pages/VideoPlay.js"));
-const LayoutComponent = ({ children }) => {
+const LayoutComponent = () => {
   return (
-    <Suspense fallback={""}>
+    <Suspense fallback={<div>loading</div>}>
       <Layout />
     </Suspense>
   );
@@ -21,16 +21,16 @@ export const routers = [
   {
     path: "/",
     element: <LayoutComponent />,
-    auth: true,
+    auth: false,
     children: [
-      { path: "/home", element: <Home />, auth: true },
-      { path: "/video", element: <Video />, auth: true },
-      { path: "/videoPlay", element: <VideoPlay />, auth: true },
-      { path: "/post", element: <Post />, auth: true },
-      { path: "/social", element: <Social />, auth: true },
-      { path: "/videoPlay", element: <VideoPlay />, auth: true },
-      
-      { path: "*", element: <NotFound />, auth: true },
+      { path: "/", element: <Home />, auth: false },
+      { path: "/home", element: <Home />, auth: false },
+      { path: "/video", element: <Video />, auth: false },
+      { path: "/videoPlay", element: <VideoPlay />, auth: false },
+      { path: "/post", element: <Post />, auth: false },
+      { path: "/social", element: <Social />, auth: false },
+      { path: "/videoPlay", element: <VideoPlay />, auth: false },
+      { path: "*", element: <NotFound />, auth: false },
     ],
   },
 ];

@@ -3,7 +3,7 @@ import {
   Routes,
 } from "react-router-dom";
 import { routers } from "./router";
-import AuthRoute from "./router/AuthRoute";
+// import AuthRoute from "./router/AuthRoute";
 
 const App = () => {
 
@@ -15,9 +15,10 @@ const App = () => {
             <Route
               path={item.path}
               element={
-                <AuthRoute auth={item.auth} key={item.path}>
-                  {item.element}
-                </AuthRoute>
+                // <AuthRoute auth={item.auth} key={item.path}>
+                //   {item.element}
+                // </AuthRoute>
+                item.element
               }
               key={item.path}
             >

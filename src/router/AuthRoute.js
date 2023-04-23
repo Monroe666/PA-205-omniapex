@@ -24,7 +24,7 @@ const AuthRoute = ({ children, auth }) => {
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token, location.pathname]);
+  }, [location.pathname]);
 
   return children;
 };
