@@ -17,7 +17,7 @@ const LayoutComponent = () => {
 };
 
 export const routers = [
-  { path: "/sign", element: <Sign />, auth: false },
+  { path: "/sign", element: <Sign />, auth: true },
   {
     path: "/",
     element: <LayoutComponent />,
@@ -29,7 +29,6 @@ export const routers = [
       { path: "/videoPlay", element: <VideoPlay />, auth: false },
       { path: "/post", element: <Post />, auth: false },
       { path: "/social", element: <Social />, auth: false },
-      { path: "/videoPlay", element: <VideoPlay />, auth: false },
       { path: "*", element: <NotFound />, auth: false },
     ],
   },

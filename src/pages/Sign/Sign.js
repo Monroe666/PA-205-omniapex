@@ -1,10 +1,12 @@
 import { Fragment, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bkimg from "../../assets/bk.jpg";
 import "../../styles/Login.css";
 
 function Login() {
   const [show, setShow] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const handleNewAccount = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ function Login() {
 
     const eformat = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-    if (account == "" || account == null) {
+    if (account === "" || account === null) {
       setErrorMessage('Account cannot be empty')
     }
 
@@ -25,15 +27,15 @@ function Login() {
       setErrorMessage('Account format is incorrect')
     }
 
-    else if (password == "" || password == null) {
+    else if (password === "" || password === null) {
       setErrorMessage('Password cannot be empty')
     }
 
-    else if (username == "" || username == null) {
+    else if (username === "" || username === null) {
       setErrorMessage('Username cannot be empty')
     }
 
-    else if (usertype == "" || usertype == null) {
+    else if (usertype === "" || usertype === null) {
       setErrorMessage('Please select the type of user you are registering')
     }
 
@@ -45,13 +47,47 @@ function Login() {
       let obj = { "account": account, "password": password, "username": username, "usertype": usertype }
       localStorage.setItem('user', JSON.stringify(obj));
       alert('Congratulations, you have sign up successfully!');
+      window.location.reload();
     }
 
+    /*
     if (account && username && password && usertype && check) {
       window.localStorage.setItem("Token", 111);
       window.location.reload();
     }
+    */
   };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const user = JSON.parse(localStorage.getItem('user'));
+    let formData = new FormData(e.currentTarget);
+    let account = formData.get("account");
+    let password = formData.get("password");
+
+    if (account === "" || account == null) {
+      setErrorMessage('Email cannot be empty')
+    }
+
+    else if (password === "" || password === null) {
+      setErrorMessage('Password cannot be empty')
+    }
+
+    else if (account !== user.account) {
+      setErrorMessage('Email is incorrect')
+    }
+
+    else if (password !== user.password) {
+      setErrorMessage('Password is incorrect')
+    }
+
+    else {
+      alert('Congratulations, you have log in successfully!');
+      localStorage.setItem("loggedin", true);
+      navigate("/");
+    }
+  }
+
   return (
     <div className="layout">
       <div className="header">
@@ -188,7 +224,7 @@ function Login() {
           ) : (
             <Fragment>
               <div style={{ fontSize: "30px", fontWeight: "bold" }}>LOG IN</div>
-              <form>
+              <form onSubmit={handleLogin}>
                 <div
                   style={{
                     margin: "1rem 1rem",
@@ -235,9 +271,13 @@ function Login() {
                     Remember Me
                   </span>
                 </div>
+                {errorMessage !== null &&
+                  <div>
+                    <span style={{ fontSize: "15px", color: "red" }}>{errorMessage}</span>
+                  </div>}
                 <input
                   type="submit"
-                  value="Create a New Account"
+                  value="Log in"
                   style={{
                     backgroundColor: "#062D37",
                     color: "#ffffff",
