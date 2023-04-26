@@ -1,12 +1,14 @@
 import { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bkimg from "../../assets/bk.jpg";
 import "../../styles/Login.css";
+import Axios from "axios";
 
 function Login() {
   const [show, setShow] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
+  const eformat = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
   const handleNewAccount = (e) => {
     e.preventDefault();
@@ -16,8 +18,6 @@ function Login() {
     let username = formData.get("username");
     let usertype = formData.get("usertype")
     let check = formData.get("check");
-
-    const eformat = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
     if (account === "" || account === null) {
       setErrorMessage('Account cannot be empty')
@@ -44,8 +44,12 @@ function Login() {
     }
 
     else {
-      let obj = { "account": account, "password": password, "username": username, "usertype": usertype }
-      localStorage.setItem('user', JSON.stringify(obj));
+      Axios.post("http://localhost:3001/signup", {
+        account,
+        password,
+        username,
+        usertype,
+      });
       alert('Congratulations, you have sign up successfully!');
       window.location.reload();
     }
@@ -60,7 +64,6 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const user = JSON.parse(localStorage.getItem('user'));
     let formData = new FormData(e.currentTarget);
     let account = formData.get("account");
     let password = formData.get("password");
@@ -69,22 +72,27 @@ function Login() {
       setErrorMessage('Email cannot be empty')
     }
 
+    else if (!eformat.test(account)) {
+      setErrorMessage('Email format is incorrect')
+    }
+
     else if (password === "" || password === null) {
       setErrorMessage('Password cannot be empty')
     }
 
-    else if (account !== user.account) {
-      setErrorMessage('Email is incorrect')
-    }
-
-    else if (password !== user.password) {
-      setErrorMessage('Password is incorrect')
-    }
-
     else {
-      alert('Congratulations, you have log in successfully!');
-      localStorage.setItem("loggedin", true);
-      navigate("/");
+      Axios.post("http://localhost:3001/signin", {
+        account,
+        password,
+      }).then((response) => {
+        if (response.data.message) {
+          setErrorMessage(response.data.message);
+        } else {
+          alert('Congratulations, you have log in successfully!');
+          localStorage.setItem("loggedin", true);
+          navigate("/");
+        }
+      });
     }
   }
 
@@ -92,9 +100,10 @@ function Login() {
     <div className="layout">
       <div className="header">
         <div>
-          <div style={{ fontSize: "40px", fontWeight: "bold" }}>FOLOWA</div>
+          <div style={{ fontSize: "40px", fontWeight: "bold" }}><Link to="/">FOLOWA</Link></div>
           <div>Music Streaming Platform</div>
         </div>
+
         <div>
           <span
             onClick={() => setShow((v) => !v)}
