@@ -54,6 +54,45 @@
     color: white;
 }
 
+.notifi_box {
+    display: none;
+}
+
+.boxOpen {
+    height: 200px;
+    width: 120px;
+    position: absolute;
+    top: 70px;
+    right: 155px;
+    z-index: 1;
+}
+
+.notifi_title {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: white;
+}
+
+.notifi_amount {
+    color: #f00;
+}
+
+.notifi_item:hover {
+    background-color: green;
+}
+
+.notifi_item .text h4 {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.notifi_item .text p {
+    color: white;
+    font-size: 10px;
+}
+
 .chat {
     position: absolute;
     width: 35px;
