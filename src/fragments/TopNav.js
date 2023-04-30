@@ -8,41 +8,42 @@ import { BiMessageRounded } from 'react-icons/bi';
 import { BiLogOut } from 'react-icons/bi'
 
 const TopNav = () => {
+    const [loggedin, setLoggedin] = useState(
+      localStorage.getItem("loggedin") || false
+    ); 
     const navigate = useNavigate();
-
+  
     const handleLogout = () => {
-        localStorage.removeItem("loggedin");
-        navigate("/sign");
-    }
-
-    const [isNotifiOpen, setNotifiOpen] = useState(false);
-
+      localStorage.removeItem("loggedin");
+      navigate("/sign");
+    };
+  
     return (
-        <div className="top_nav">
-            <MdOutlineArrowBackIos className="pre" />
-            <MdOutlineArrowForwardIos className="next" />
-            <input className="search" type="text" placeholder="Artists,songs or podcasts" />
+      <div className="top_nav">
+        <MdOutlineArrowBackIos className="pre" />
+        <MdOutlineArrowForwardIos className="next" />
+        <input
+          className="search"
+          type="text"
+          placeholder="Artists,songs or podcasts"
+        />
+        {loggedin ? (
+          <Link to="/userprofile">
+            <FaRegUser className="user" />
+          </Link>
+        ) : (
+          <Link to="/sign">
+            <FaRegUser className="user" />
+          </Link>
+        )}
+        <IoMdNotificationsOutline className="notice" />
+        <Link to="/messaging">
+          <BiMessageRounded className="chat" />
+        </Link>
+        <BiLogOut className="logout" onClick={handleLogout} />
+      </div>
 
-            <Link to="/sign">
-                <FaRegUser className="user" />
-            </Link>
-
-            <IoMdNotificationsOutline className="notice" onClick={() => setNotifiOpen(!isNotifiOpen)} />
-            <div className={isNotifiOpen ? "boxOpen" : "notifi_box"}>
-                <h2 className="notifi_title">Notification <span className="notifi_amount">1</span></h2>
-                <div className="notifi_item">
-                    <div className="text">
-                        <h4>A</h4>
-                        <p>Hello!</p>
-                    </div>
-                </div>
-            </div>
-            
-            <BiMessageRounded className="chat" />
-            <BiLogOut className="logout"
-                onClick={handleLogout} />
-        </div>
-    )
-}
+);
+};
 
 export default TopNav;

@@ -8,6 +8,9 @@ const Video = lazy(() => import("../pages/Video.js"));
 const Post = lazy(() => import("../pages/Post.js"));
 const Social = lazy(() => import("../pages/Social.js"));
 const VideoPlay = lazy(() => import("../pages/VideoPlay.js"));
+const UserProfile = lazy(() => import("../pages/UserProfile.js"));
+const Messaging = lazy(() => import("../pages/Messaging.js"));
+
 const LayoutComponent = () => {
   return (
     <Suspense fallback={<div>loading</div>}>
@@ -29,6 +32,8 @@ export const routers = [
       { path: "/videoPlay", element: <VideoPlay />, auth: false },
       { path: "/post", element: <Post />, auth: false },
       { path: "/social", element: <Social />, auth: false },
+      { path: "/userprofile", element: <UserProfile />, auth: false },
+      { path: "/messaging", element: <Messaging />, auth: false },
       { path: "*", element: <NotFound />, auth: false },
     ],
   },
