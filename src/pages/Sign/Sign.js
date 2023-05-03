@@ -90,6 +90,7 @@ function Login() {
         } else {
           alert('Congratulations, you have log in successfully!');
           localStorage.setItem("loggedin", true);
+          localStorage.setItem("account", account);
           navigate("/");
         }
       });
