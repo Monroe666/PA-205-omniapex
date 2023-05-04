@@ -110,3 +110,33 @@
     top: 30px;
     color: white;
 }
+
+.search-results {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 1;
+  }
+
+  .search {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 16px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+    transition: background-color 0.2s;
+  }
+  
+  .search:focus {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  

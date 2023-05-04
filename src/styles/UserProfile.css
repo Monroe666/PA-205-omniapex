@@ -84,31 +84,23 @@
     color: white;
 }
 
-.profile_account {
+.profile_name {
     position: absolute;
+    width: 500px;
     left: 340px;
-    top: 100px;
+    top: 85px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 45px;
 }
 
-.profile_name{
+.profiledesc {
     position: absolute;
+    width: 500px;
     left: 340px;
-    top: 200px;
+    top: 150px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 35px;
-}
-
-.profile_type{
-    position: absolute;
-    left: 340px;
-    top: 280px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 35px;
 }
 
 
