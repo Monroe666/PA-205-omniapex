@@ -1,0 +1,125 @@
+.top_nav {
+    position: absolute;
+    width: 1340px;
+    height: 80px;
+    left: 100px;
+    top: 0px;
+    background-color: rgba(57, 57, 57, 1);
+}
+
+.pre {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 40px;
+    top: 33px;
+    color: white;
+}
+
+.next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 33px;
+    color: white;
+}
+
+.search {
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 175px;
+    top: 33px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.user {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 1020px;
+    top: 33px;
+    color: white;
+
+}
+
+.notice {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1100px;
+    top: 30px;
+    color: white;
+}
+
+.notifi_box {
+    display: none;
+}
+
+.boxOpen {
+    height: 200px;
+    width: 120px;
+    position: absolute;
+    top: 70px;
+    right: 155px;
+    z-index: 1;
+}
+
+.notifi_title {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: white;
+}
+
+.notifi_amount {
+    color: #f00;
+}
+
+.notifi_item:hover {
+    background-color: green;
+}
+
+.notifi_item .text h4 {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.notifi_item .text p {
+    color: white;
+    font-size: 10px;
+}
+
+.chat {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1180px;
+    top: 30px;
+    color: white;
+}
+
+.logout {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1260px;
+    top: 30px;
+    color: white;
+}
+
+.search-results {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 1;
+  }
+  
