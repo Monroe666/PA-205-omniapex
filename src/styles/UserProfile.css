@@ -142,3 +142,46 @@
     color: white;
     font-size: 20px;
 }
+
+.edit_bio_btn {
+    position: absolute;
+    top: 650px;
+    left: 650px;
+    height: 40px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.edit_bio {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.edit_bio_title {
+    position: absolute;
+    top: 10px;
+    left: 135px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: green;
+}
+
+.edit_bio_input {
+    position: absolute;
+    top: 50px;
+    left: 52px;
+    padding: 10px 10px;
+}
+
+.edit_bio_confirm {
+    position: absolute;
+    top: 160px;
+    left: 52px;
+    height: 25px;
+    width: 60px;
+}

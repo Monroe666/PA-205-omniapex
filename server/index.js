@@ -63,6 +63,15 @@ app.get('/user/:email', (req, res) => {
         })
 })
 
+app.post('/bio/:email', (req, res) => {
+    const bio = req.body.bio;
+    const account = req.params.email;
+
+    db.query("UPDATE user SET bio = ? WHERE account = ?",
+        [bio, account]
+    )
+})
+
 app.listen(3001, () => {
     console.log("running backend server");
 })

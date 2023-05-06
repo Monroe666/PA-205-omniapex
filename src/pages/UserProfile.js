@@ -2,6 +2,7 @@ import "../styles/UserProfile.css";
 import Music from "../fragments/Music"
 import ProfilePic from "../assets/profilepic.png";
 import { useEffect, useState } from "react";
+import EditBio from "../popup/EditBio";
 
 const UserProfile = () => {
 
@@ -16,6 +17,22 @@ const UserProfile = () => {
             .catch(err => console.log(err));
     }, [])
 
+    const [editBio, setEditBio] = useState("close");
+
+    const openEditBio = () => {
+        switch (editBio) {
+            case "close":
+                setEditBio("open");
+                return;
+            case "open":
+                setEditBio("close");
+                return;
+            default:
+                setEditBio("close");
+                return;
+        }
+    }
+
     return (
         <div>
             <div className="home">
@@ -24,6 +41,7 @@ const UserProfile = () => {
                     <h1 className="profile_name">{d.username}</h1>
                     <h3 className="profile_account">Email: {d.account}</h3>
                     <p className="profile_type">User type: {d.usertype}</p>
+                    <p className="profile_bio">{d.bio}</p>
                 </div>
                 ))}
 
@@ -40,10 +58,9 @@ const UserProfile = () => {
                 <button className="profile_more">+ View more</button>
 
                 <h1 className="bio_title">ABOUT</h1>
-                <p className="profile_bio">Emmelie is a traditional book-worm and has always been from a young age.
-                    She is a housekeeper mom with two kids and she has a lot of time to read and relax.
-                    Emmelie tends to casually browse books in a bookstore but she usually has a hard time finding the
-                    right one and spends a lot of time browsing.</p>
+
+                <button className="edit_bio_btn" onClick={(e) => openEditBio()}>Edit</button>
+                <EditBio popStatus={editBio} />
             </div>
             <Music />
         </div>
