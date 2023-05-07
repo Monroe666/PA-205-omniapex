@@ -63,12 +63,21 @@ app.get('/user/:email', (req, res) => {
         })
 })
 
-app.post('/bio/:email', (req, res) => {
+app.post('/bio', (req, res) => {
     const bio = req.body.bio;
-    const account = req.params.email;
+    const account = req.body.email;
 
     db.query("UPDATE user SET bio = ? WHERE account = ?",
         [bio, account]
+    )
+})
+
+app.post('/name', (req, res) => {
+    const name = req.body.name;
+    const account = req.body.email;
+
+    db.query("UPDATE user SET username = ? WHERE account = ?",
+        [name, account]
     )
 })
 

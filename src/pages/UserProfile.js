@@ -2,6 +2,7 @@ import "../styles/UserProfile.css";
 import Music from "../fragments/Music"
 import ProfilePic from "../assets/profilepic.png";
 import { useEffect, useState } from "react";
+import EditName from "../popup/EditName";
 import EditBio from "../popup/EditBio";
 
 const UserProfile = () => {
@@ -16,6 +17,22 @@ const UserProfile = () => {
             .then(data => setUser(data))
             .catch(err => console.log(err));
     }, [])
+
+    const [editName, setEditName] = useState("close");
+
+    const openEditName = () => {
+        switch (editName) {
+            case "close":
+                setEditName("open");
+                return;
+            case "open":
+                setEditName("close");
+                return;
+            default:
+                setEditName("close");
+                return;
+        }
+    }
 
     const [editBio, setEditBio] = useState("close");
 
@@ -39,6 +56,9 @@ const UserProfile = () => {
                 <img className="profile_img" src={ProfilePic}></img>
                 {user.map(d => (<div>
                     <h1 className="profile_name">{d.username}</h1>
+                    <button className="edit_name_btn" onClick={() => openEditName()}>Edit</button>
+                    <EditName popStatus={editName} />
+
                     <h3 className="profile_account">Email: {d.account}</h3>
                     <p className="profile_type">User type: {d.usertype}</p>
                     <p className="profile_bio">{d.bio}</p>
@@ -59,7 +79,7 @@ const UserProfile = () => {
 
                 <h1 className="bio_title">ABOUT</h1>
 
-                <button className="edit_bio_btn" onClick={(e) => openEditBio()}>Edit</button>
+                <button className="edit_bio_btn" onClick={() => openEditBio()}>Edit</button>
                 <EditBio popStatus={editBio} />
             </div>
             <Music />

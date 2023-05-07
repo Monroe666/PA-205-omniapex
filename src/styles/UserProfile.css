@@ -13,8 +13,26 @@
     top: 350px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
+}
+
+.edit_name_btn {
+    position: absolute;
+    top: 370px;
+    left: 500px;
+    height: 40px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.edit_name_input {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    height: 20px;
+    width: 250px;
+    border-radius: 10px;
 }
 
 .profile_account {
@@ -160,6 +178,7 @@
     width: 400px;
     border-radius: 10px;
     background-color: #FFFFFF;
+    z-index: 1;
 }
 
 .edit_bio_title {
