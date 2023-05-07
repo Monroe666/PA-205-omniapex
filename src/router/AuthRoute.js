@@ -12,7 +12,6 @@ const AuthRoute = ({ children, auth }) => {
 
   useEffect(() => {
     if (token === "" && auth) {
-      console.log("token 过期，请重新登录!");
       navigate("/sign");
     }
     if (token && isExist ) {

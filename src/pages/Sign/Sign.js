@@ -90,6 +90,7 @@ function Login() {
         } else {
           alert('Congratulations, you have log in successfully!');
           localStorage.setItem("loggedin", true);
+          localStorage.setItem("account", account);
           navigate("/");
         }
       });
@@ -191,10 +192,10 @@ function Login() {
                   />
                 </div>
                 <div>
-                  <input type="radio" id="user" name="usertype" value="user" />
+                  <input type="radio" id="user" name="usertype" value="User" />
                   <label for="user">User</label>
 
-                  <input type="radio" id="creator" name="usertype" value="creator" />
+                  <input type="radio" id="creator" name="usertype" value="Creator" />
                   <label for="creator">Creator</label>
                 </div>
                 <div>

@@ -16,6 +16,11 @@ const db = mysql.createConnection(
     }
 )
 
+db.connect((err) => {
+    if (err) throw err;
+    console.log('Mysql Connected...');
+});
+
 app.post('/signup', (req, res) => {
     const account = req.body.account;
     const password = req.body.password;
@@ -44,6 +49,26 @@ app.post('/signin', (req, res) => {
                 }
             }
         }
+    )
+})
+
+app.get('/user/:email', (req, res) => {
+    const account = req.params.email;
+
+    db.query("SELECT * FROM user WHERE account = ?",
+        account,
+        (err, data) => {
+            if (err) return res.json(err);
+            return res.json(data);
+        })
+})
+
+app.post('/bio/:email', (req, res) => {
+    const bio = req.body.bio;
+    const account = req.params.email;
+
+    db.query("UPDATE user SET bio = ? WHERE account = ?",
+        [bio, account]
     )
 })
 
