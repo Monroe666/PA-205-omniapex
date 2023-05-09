@@ -18,7 +18,7 @@ const EditName = (props) => {
             name,
             email,
         });
-        alert('Congratulations! Modified successfully!');
+        alert('Congratulations! Name modified successfully!');
         navigate("/");
     }
 

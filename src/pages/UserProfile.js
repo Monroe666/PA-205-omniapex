@@ -1,11 +1,13 @@
 import "../styles/UserProfile.css";
 import Music from "../fragments/Music"
-import ProfilePic from "../assets/profilepic.png";
 import { useEffect, useState } from "react";
 import EditName from "../popup/EditName";
 import EditBio from "../popup/EditBio";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
+    const navigate = useNavigate();
 
     const [user, setUser] = useState([]);
 
@@ -17,6 +19,22 @@ const UserProfile = () => {
             .then(data => setUser(data))
             .catch(err => console.log(err));
     }, [])
+
+    const [file, setFile] = useState();
+
+    const handleFile = (e) => {
+        console.log(file);
+        setFile(e.target.files[0]);
+    }
+
+    const handleUpload = () => {
+        const formdata = new FormData();
+        formdata.append('image', file);
+        axios.post("http://localhost:3001/upload/" + email, formdata);
+
+        alert('Congratulations! profile picture modified successfully!');
+        navigate("/");
+    }
 
     const [editName, setEditName] = useState("close");
 
@@ -53,8 +71,12 @@ const UserProfile = () => {
     return (
         <div>
             <div className="home">
-                <img className="profile_img" src={ProfilePic}></img>
+
+                <input className="add_picture_btn" type="file" onChange={handleFile} />
+                <button className="upload_picture_btn" onClick={handleUpload}>Upload</button>
+
                 {user.map(d => (<div>
+                    <img className="profile_img" src={"http://localhost:3001/images/" + d.picture} alt=""></img>
                     <h1 className="profile_name">{d.username}</h1>
                     <button className="edit_name_btn" onClick={() => openEditName()}>Edit</button>
                     <EditName popStatus={editName} />

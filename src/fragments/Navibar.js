@@ -14,7 +14,7 @@ const Navibar = () => {
         <div>
             <nav className={isNavOpen ? "nav_open" : "nav_closed"}>
                 <Link to="/">
-                    <img className="logo" src={Logo}></img>
+                    <img className="logo" src={Logo} alt=""></img>
                 </Link>
                 <BsThreeDots className="expand" onClick={() => setNavOpen(!isNavOpen)} />
                 <Link to="/">

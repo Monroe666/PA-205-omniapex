@@ -13,7 +13,7 @@ import { MdMusicVideo, MdZoomOutMap } from 'react-icons/md';
 const Music = () => {
     return (
         <div className="music">
-            <img className="cover" src={Cover}></img>
+            <img className="cover" src={Cover} alt=''></img>
             <p className="title">Song Name</p>
             <p className="artist_name">Jay</p>
             <AiOutlineHeart className="like" />

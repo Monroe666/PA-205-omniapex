@@ -1,11 +1,14 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
+const multer = require("multer");
+const path = require("path");
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'));
 
 const db = mysql.createConnection(
     {
@@ -80,6 +83,29 @@ app.post('/name', (req, res) => {
         [name, account]
     )
 })
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
+    }
+})
+
+const upload = multer({
+    storage: storage
+})
+
+app.post('/upload/:email', upload.single('image'),
+    (req, res) => {
+        const account = req.params.email;
+        const image = req.file.filename;
+
+        db.query("UPDATE user SET picture = ? WHERE account = ?",
+            [image, account]
+        )
+    })
 
 app.listen(3001, () => {
     console.log("running backend server");

@@ -4,9 +4,9 @@ import Video_Author from "../assets/video_author.png";
 const VideoCard = () => {
     return (
         <div className="video_card">
-            <img className="video_cover" src="https://blog.flixel.com/wp-content/uploads/2017/06/Facebook-Cover-Videos.jpg"></img>
+            <img className="video_cover" src="https://blog.flixel.com/wp-content/uploads/2017/06/Facebook-Cover-Videos.jpg" alt=""></img>
             <div className="video_detail">
-                <img className="video_au_icon" src={Video_Author}></img>
+                <img className="video_au_icon" src={Video_Author} alt=""></img>
                 <h1 className="video_title">This is a title</h1>
             </div>
             <p className="video_au_name">This is the author name</p>

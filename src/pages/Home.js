@@ -12,8 +12,8 @@ const Home = () => {
                 <button className="album">Album</button>
                 <button className="genre">Genre</button>
                 <h1 className="list_title">Playlists</h1>
-                <button className="like_list"><img className="like_list_img" src={Like}></img>Liked Songs</button>
-                <button className="create_list"><img className="create_list_img" src={Create}></img>Create List</button>
+                <button className="like_list"><img className="like_list_img" src={Like} alt=""></img>Liked Songs</button>
+                <button className="create_list"><img className="create_list_img" src={Create} alt=""></img>Create List</button>
             </div>
             <Music />
         </div>

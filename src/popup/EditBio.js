@@ -18,7 +18,7 @@ const EditBio = (props) => {
             bio,
             email,
         });
-        alert('Congratulations! Modified successfully!');
+        alert('Congratulations! About modified successfully!');
         navigate("/");
     }
 

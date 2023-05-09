@@ -10,14 +10,14 @@ const Post = () => {
     return (
         <div className="home">
             <h1 className="post_title">What’s Going In World!!!!!</h1>
-            <img className="post_1" src={Post_1}></img>
-            <img className="post_2" src={Post_2}></img>
-            <img className="post_3" src={Post_3}></img>
+            <img className="post_1" src={Post_1} alt=""></img>
+            <img className="post_2" src={Post_2} alt=""></img>
+            <img className="post_3" src={Post_3} alt=""></img>
             <p className="poster">My Story</p>
             <h1 className="post_title1">Artist’s Stories</h1>
-            <img className="post_4" src={Post_4}></img>
-            <img className="post_5" src={Post_5}></img>
-            <img className="post_6" src={Post_6}></img>
+            <img className="post_4" src={Post_4} alt=""></img>
+            <img className="post_5" src={Post_5} alt=""></img>
+            <img className="post_6" src={Post_6} alt=""></img>
             <p className="poster1">Justin Bieber</p>
         </div>
     )

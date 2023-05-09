@@ -6,7 +6,7 @@ const Messaging = () => {
             <div className= "messagingborder">
             <div className="messaging">
                 <h1 className="messages_title">Messages</h1>
-                <img className="messagingsidebar" src={msgsidebar}></img>
+                <img className="messagingsidebar" src={msgsidebar} alt=""></img>
             
                 
                 
