@@ -7,6 +7,8 @@ const EditName = (props) => {
 
     let email = localStorage.getItem("account");
 
+    let content = 'Congratulations! Name modified successfully!'
+
     const [name, setName] = useState('');
 
     const handleChange = event => {
@@ -17,6 +19,11 @@ const EditName = (props) => {
         Axios.post("http://localhost:3001/name", {
             name,
             email,
+        });
+
+        Axios.post("http://localhost:3001/notice", {
+            email,
+            content,
         });
         alert('Congratulations! Name modified successfully!');
         navigate("/");

@@ -1,5 +1,5 @@
 import "../styles/TopNav.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
@@ -24,9 +24,19 @@ const TopNav = () => {
   const handleLogout = () => {
     localStorage.removeItem("account");
     localStorage.removeItem("loggedin");
-    setLoggedin(false);
     navigate("/sign");
   };
+
+  const [notice, setNotice] = useState([]);
+
+  let email = localStorage.getItem("account");
+
+  useEffect(() => {
+    fetch("http://localhost:3001/notice/" + email)
+        .then(res => res.json())
+        .then(data => setNotice(data))
+        .catch(err => console.log(err));
+}, [])
 
   return (
     <div className="top_nav">
@@ -53,12 +63,12 @@ const TopNav = () => {
 
       <IoMdNotificationsOutline className="notice" onClick={() => setNotifiOpen(!isNotifiOpen)} />
       <div className={isNotifiOpen ? "boxOpen" : "notifi_box"}>
-        <h2 className="notifi_title">Notification <span className="notifi_amount">1</span></h2>
+        <h2 className="notifi_title">Notification</h2>
         <div className="notifi_item">
-          <div className="text">
-            <h4>A</h4>
-            <p>Hello!</p>
+        {notice.map(d => (<div className="text">
+            <p>{d.content}</p>
           </div>
+        ))}
         </div>
       </div>
 

@@ -13,6 +13,8 @@ const UserProfile = () => {
 
     let email = localStorage.getItem("account");
 
+    let content = 'Congratulations! profile picture modified successfully!';
+
     useEffect(() => {
         fetch("http://localhost:3001/user/" + email)
             .then(res => res.json())
@@ -31,6 +33,11 @@ const UserProfile = () => {
         const formdata = new FormData();
         formdata.append('image', file);
         axios.post("http://localhost:3001/upload/" + email, formdata);
+
+        axios.post("http://localhost:3001/notice", {
+            email,
+            content,
+        });
 
         alert('Congratulations! profile picture modified successfully!');
         navigate("/");

@@ -107,6 +107,26 @@ app.post('/upload/:email', upload.single('image'),
         )
     })
 
+app.post('/notice', (req, res) => {
+    const account = req.body.email;
+    const content = req.body.content;
+
+    db.query("INSERT INTO notice (user_account, content) VALUES(?, ?)",
+        [account, content]
+    )
+})
+
+app.get('/notice/:email', (req, res) => {
+    const account = req.params.email;
+
+    db.query("SELECT * FROM notice WHERE user_account = ?",
+        account,
+        (err, data) => {
+            if (err) return res.json(err);
+            return res.json(data);
+        })
+})
+
 app.listen(3001, () => {
     console.log("running backend server");
 })

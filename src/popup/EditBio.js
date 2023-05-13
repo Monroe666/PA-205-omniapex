@@ -7,6 +7,8 @@ const EditBio = (props) => {
 
     let email = localStorage.getItem("account");
 
+    let content = 'Congratulations! About modified successfully!';
+
     const [bio, setBio] = useState('');
 
     const handleChange = event => {
@@ -17,6 +19,11 @@ const EditBio = (props) => {
         Axios.post("http://localhost:3001/bio", {
             bio,
             email,
+        });
+
+        Axios.post("http://localhost:3001/notice", {
+            email,
+            content,
         });
         alert('Congratulations! About modified successfully!');
         navigate("/");
