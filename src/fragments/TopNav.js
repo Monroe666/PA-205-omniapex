@@ -14,6 +14,8 @@ const TopNav = () => {
 
   const [isFocused, setIsFocused] = useState(false);
 
+  const [searchIndex, setSearchIndex] = useState(null);
+
   const [loggedin, setLoggedin] =
     useState(localStorage.getItem("loggedin") || false);
 
@@ -27,16 +29,30 @@ const TopNav = () => {
     navigate("/sign");
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setSearchIndex((pre) =>
+        pre > 0 ? pre - 1 : searchResults.length - 1
+      );
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setSearchIndex((pre) =>
+        pre < searchResults.length - 1 ? pre + 1 : 0
+      );
+    }
+  };
+
   const [notice, setNotice] = useState([]);
 
   let email = localStorage.getItem("account");
 
   useEffect(() => {
     fetch("http://localhost:3001/notice/" + email)
-        .then(res => res.json())
-        .then(data => setNotice(data))
-        .catch(err => console.log(err));
-}, [])
+      .then(res => res.json())
+      .then(data => setNotice(data))
+      .catch(err => console.log(err));
+  }, [])
 
   return (
     <div className="top_nav">
@@ -49,6 +65,7 @@ const TopNav = () => {
         onChange={handleSearch}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        onKeyDown={handleKeyDown}
       />
 
       {loggedin ? (
@@ -65,10 +82,10 @@ const TopNav = () => {
       <div className={isNotifiOpen ? "boxOpen" : "notifi_box"}>
         <h2 className="notifi_title">Notification</h2>
         <div className="notifi_item">
-        {notice.map(d => (<div className="text">
+          {notice.map(d => (<div className="text">
             <p>{d.content}</p>
           </div>
-        ))}
+          ))}
         </div>
       </div>
 
@@ -81,8 +98,15 @@ const TopNav = () => {
       {isFocused && (
         <ul className="search-results">
           {searchResults.length > 0 ? (
-            searchResults.map((result) => (
-              <li key={result.id}>{result.title}</li>
+            searchResults.map((result, index) => (
+              <li
+                key={result.id}
+                className="result-item"
+                style={{ background: searchIndex === index ? "#ccc" : "none" }}
+                onMouseEnter={() => setSearchIndex(index)}
+              >
+                {result.title}
+              </li>
             ))
           ) : query.length === 0 ? (
             <li>None</li>
