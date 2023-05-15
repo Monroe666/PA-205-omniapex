@@ -1,5 +1,4 @@
 import "../styles/Home.css";
-import "../pages/Albums.js"
 import Like from "../assets/like.png";
 import Create from "../assets/create.png";
 import Music from "../fragments/Music"
