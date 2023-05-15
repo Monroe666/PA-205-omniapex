@@ -7,7 +7,7 @@ const Albums_Cards= () => {
             <div className="albums_detail">
                 <h1 className="albums_title">This is the author name</h1>
             </div>
-            <p className="albums_au_name">This is a Title </p>
+            <p className="albums_title">This is a Title </p>
             <p className="albums_au_name">235K views - 1 year ago</p>
         </div>
     )
