@@ -9,7 +9,7 @@ const Albums = () => {
                 <Albums_Cards />
                 <Albums_Cards/>
                 <Albums_Cards/>
-                <VAlbums_Cards/>
+                <Albums_Cards/>
                 <Albums_Cards/>
                 <Albums_Cards/>
             </div>        
