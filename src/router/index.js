@@ -10,6 +10,7 @@ const Social = lazy(() => import("../pages/Social.js"));
 const VideoPlay = lazy(() => import("../pages/VideoPlay.js"));
 const UserProfile = lazy(() => import("../pages/UserProfile.js"));
 const Messaging = lazy(() => import("../pages/Messaging.js"));
+const Album = lazy(() => import("../pages/Albums.js"));
 
 const LayoutComponent = () => {
   return (
@@ -34,6 +35,7 @@ export const routers = [
       { path: "/social", element: <Social />, auth: false },
       { path: "/userprofile", element: <UserProfile />, auth: false },
       { path: "/messaging", element: <Messaging />, auth: false },
+      { path: "/album", element: <Album />, auth: false },
       { path: "*", element: <NotFound />, auth: false },
     ],
   },

@@ -10,9 +10,11 @@ const Home = () => {
             <div className="home">
                 <h1 className="home_title">Streaming music now!</h1>
                 <button className="artist">Artist</button>
-                <Link to="/Albums">
+
+                <Link to="/album">
                 <button className="album">Album</button>
                 </Link>
+                
                 <button className="genre">Genre</button>
                 <h1 className="list_title">Playlists</h1>
                 <button className="like_list"><img className="like_list_img" src={Like} alt=""></img>Liked Songs</button>
