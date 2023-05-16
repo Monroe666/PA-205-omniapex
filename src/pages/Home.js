@@ -10,7 +10,7 @@ const Home = () => {
             <div className="home">
                 <h1 className="home_title">Streaming music now!</h1>
                 <button className="artist">Artist</button>
-                <Link to="/album">
+                <Link to="/Albums">
                 <button className="album">Album</button>
                 </Link>
                 <button className="genre">Genre</button>
