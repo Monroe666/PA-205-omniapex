@@ -1,30 +1,42 @@
 
 .albums_card {
+    float: left;
+    width: 30%;
+	padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
     width: 250px;
-    margin-bottom: 40px;
+    margin-top: 100px;
+    margin-left: 80px;
+    margin-right: 0px;
     cursor: pointer;
+    flex-direction: column;
+ 
 }
 
 .albums_cover {
     width: 100%;
     height: 200px;
+    object-fit: contain;
 }
 
 .albums_detail {
     display: flex;
     margin-top: 10px;
-    margin-left: 5px;
+    margin-left: 0px;
     gap: 10px;
 }
 
 .albums_title {
     font-size: 15px;
     font-weight: 800;
-    color: white;
+    margin-left: 10px;
+    color: black;
 }
 
 .albums_au_name{
     margin-left: 45px;
     font-size: 12px;
-    color: white;
+    margin-left: 10px;
+    color: black;
 }
