@@ -1,6 +1,6 @@
 import "../styles/Albums_Cards.css";
 
-const Albums_Cards= () => {
+const Albums_Cards = () => {
     return (
         <div className="albums_card">
             <img className="albums_cover" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Compact_disc_album.jpg"></img>
