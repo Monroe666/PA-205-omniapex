@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import Layout from "../components/Layout";
 import Sign from "../pages/Sign";
 
+
 import NotFound from "../components/NotFound";
 const Home = lazy(() => import("../pages/Home.js"));
 const Video = lazy(() => import("../pages/Video.js"));
@@ -11,6 +12,8 @@ const VideoPlay = lazy(() => import("../pages/VideoPlay.js"));
 const UserProfile = lazy(() => import("../pages/UserProfile.js"));
 const Messaging = lazy(() => import("../pages/Messaging.js"));
 const Album = lazy(() => import("../pages/Albums.js"));
+const Artist = lazy(() => import("../pages/Artist.js"));
+const Genre = lazy(() => import("../pages/Genre.js"));
 
 const LayoutComponent = () => {
   return (
@@ -36,6 +39,8 @@ export const routers = [
       { path: "/userprofile", element: <UserProfile />, auth: false },
       { path: "/messaging", element: <Messaging />, auth: false },
       { path: "/album", element: <Album />, auth: false },
+      { path: "/artist", element: <Artist />, auth: false },
+      { path: "/genre", element: <Genre />, auth: false },
       { path: "*", element: <NotFound />, auth: false },
     ],
   },
