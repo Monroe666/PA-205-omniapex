@@ -40,38 +40,51 @@ export default function Artist() {
     }
     // add more artists here...
   ];
-
-  // Inline styles
-  const styles = {
+   // Inline styles
+   const styles = {
     container: {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      backgroundColor: '#F4F4F4',
+      padding: '20px'
     },
     artistContainer: {
       border: '1px solid #ddd',
       borderRadius: '5px',
+      boxShadow: '0px 4px 15px rgba(0,0,0,0.1)',
       padding: '20px',
       margin: '20px',
-      maxWidth: '300px'
+      maxWidth: '300px',
+      backgroundColor: '#fff',
+      textAlign: 'center',
     },
     image: {
-      width: '100%',
-      height: 'auto'
+      borderRadius: '50%',
+      width: '60%',
+      height: 'auto',
+      objectFit: 'cover',
+      marginBottom: '15px'
     },
     name: {
       fontSize: '24px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      color: '#333',
+      marginBottom: '10px'
     },
     bio: {
-      fontSize: '16px'
+      fontSize: '16px',
+      color: '#666',
+      marginBottom: '15px'
     },
     albums: {
-      listStyleType: 'none'
+      listStyleType: 'none',
+      padding: 0,
+      fontSize: '14px',
+      color: '#999'
     }
   };
-
   return (
     <div style={styles.container} className='home'>
       {artists.map((artist, index) => (
@@ -89,6 +102,10 @@ export default function Artist() {
       ))}
     </div>
   );
+
+
+  // Inline styles
+  
 }
   
     
