@@ -44,29 +44,39 @@ export default function Genre() {
   // Inline styles
   const styles = {
     container: {
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around'
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+      gridGap: '20px',
+      padding: '20px',
+      boxSizing: 'border-box'
     },
     genreContainer: {
-      border: '1px solid #ddd',
-      borderRadius: '5px',
-      padding: '20px',
-      margin: '20px',
-      maxWidth: '300px',
-      flexBasis: '300px'
+      background: '#fff',
+      borderRadius: '10px',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+      overflow: 'hidden',
+      transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+    },
+    genreContainerHover: {
+      boxShadow: '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
     },
     image: {
+      height: '200px',
       width: '100%',
-      height: 'auto'
+      objectFit: 'cover',
+      objectPosition: 'center'
     },
     name: {
+      padding: '10px',
+      color: '#333',
       fontSize: '24px',
       fontWeight: 'bold'
     },
     description: {
-      fontSize: '16px'
+      padding: '10px',
+      color: '#666',
+      fontSize: '16px',
+      lineHeight: '1.6'
     },
   };
 
@@ -75,7 +85,7 @@ export default function Genre() {
       {genres.map((genre, index) => (
         <div key={index} style={styles.genreContainer}>
           <img style={styles.image} src={genre.image} alt={genre.name} />
-          <h1 style={styles.name}>{genre.name}</h1>
+          <h2 style={styles.name}>{genre.name}</h2>
           <p style={styles.description}>{genre.description}</p>
         </div>
       ))}
