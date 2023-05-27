@@ -12,7 +12,7 @@ const Home = () => {
                 <h1 className="home_title">Streaming music now!</h1>
                 
                 <Link to="/artist">
-                <button className="artist">Artist</button>
+                <button className="artist_btn">Artist</button>
                 </Link>
 
 
