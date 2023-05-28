@@ -13,7 +13,7 @@ const Messaging = () => {
     
     if (!localStorage.getItem('username')) return <LoginForm />;
     
-    const backHome = () => { // backHome function should be defined before using it in the onClick handler.
+    const backHome = () => { 
         navigate("/");
     }
 
@@ -21,7 +21,7 @@ const Messaging = () => {
         <div>
             <button className="backhome" onClick={backHome}>Home</button>
             <ChatEngine
-                height="96vh"
+                height="100vh"
                 projectID={projectID} // use the variable projectID defined above
                 userName="Bryant"
                 userSecret="123"

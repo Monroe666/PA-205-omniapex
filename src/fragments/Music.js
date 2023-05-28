@@ -14,7 +14,7 @@ const Music = () => {
     return (
         <div className="music">
             <img className="cover" src={Cover} alt=''></img>
-            <p className="title">Song Name</p>
+            <p className="song_title">Song Name</p>
             <p className="artist_name">Jay</p>
             <AiOutlineHeart className="like" />
             <MdAddCircleOutline className="add" />
