@@ -39,4 +39,6 @@ Explore the Platform: With all the steps completed, you are now free to explore 
 
 ## Github URL: https://github.com/Monroe666/PA-205-omniapex
 
-## URL of the deployed project on the web: http://localhost:3000/
+## URL of the deployed project on the web: http://localhost:3000/ You need to run locally successfully
+
+## See DEPLOYMENT INSTRUCTIONS at 205-omniapex-technical-report.pdf for more information.
